@@ -1,9 +1,7 @@
 //
 //  ViewController.swift
 //  TestWorkSiberian
-//
-//  Created by Наташа on 06.04.2022.
-//
+
 
 import UIKit
 
