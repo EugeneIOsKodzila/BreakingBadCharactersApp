@@ -15,6 +15,7 @@
 		6E06D0F727FDA44A00FD4AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */; };
 		6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */; };
 		6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6372F828056012004DA46E /* museosanscyrl_100.otf */; };
+		6EF7A3E12806A8BD005BFF0F /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF7A3E02806A8BD005BFF0F /* ListView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6E06D0F927FDA44A00FD4AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E06D0FB27FDA44A00FD4AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6372F828056012004DA46E /* museosanscyrl_100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = museosanscyrl_100.otf; sourceTree = "<group>"; };
+		6EF7A3E02806A8BD005BFF0F /* ListView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,9 @@
 		6E06D0E927FDA44600FD4AA1 /* TestWorkSiberian */ = {
 			isa = PBXGroup;
 			children = (
-				6E6372F728055FC3004DA46E /* Fonts */,
+				6EF7A3E02806A8BD005BFF0F /* ListView.storyboard */,
+				6EF7A3DC28069904005BFF0F /* Application */,
+				6EF7A3DB280698CA005BFF0F /* Resources */,
 				6E06D0EA27FDA44600FD4AA1 /* AppDelegate.swift */,
 				6E06D0EC27FDA44600FD4AA1 /* SceneDelegate.swift */,
 				6E06D0EE27FDA44600FD4AA1 /* ViewController.swift */,
@@ -79,6 +83,21 @@
 				6E6372F828056012004DA46E /* museosanscyrl_100.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6EF7A3DB280698CA005BFF0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E6372F728055FC3004DA46E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EF7A3DC28069904005BFF0F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 			files = (
 				6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */,
 				6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */,
+				6EF7A3E12806A8BD005BFF0F /* ListView.storyboard in Resources */,
 				6E06D0F727FDA44A00FD4AA1 /* Assets.xcassets in Resources */,
 				6E06D0F227FDA44600FD4AA1 /* Main.storyboard in Resources */,
 			);
