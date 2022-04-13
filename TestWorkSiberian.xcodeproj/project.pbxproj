@@ -60,13 +60,10 @@
 		6E06D0E927FDA44600FD4AA1 /* TestWorkSiberian */ = {
 			isa = PBXGroup;
 			children = (
-				6E6372F728055FC3004DA46E /* Fonts */,
-				6E06D0EA27FDA44600FD4AA1 /* AppDelegate.swift */,
-				6E06D0EC27FDA44600FD4AA1 /* SceneDelegate.swift */,
+				6EF7A3E42806E8D3005BFF0F /* Application */,
+				6EF7A3E22806E82E005BFF0F /* Resources */,
 				6E06D0EE27FDA44600FD4AA1 /* ViewController.swift */,
 				6E06D0F027FDA44600FD4AA1 /* Main.storyboard */,
-				6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */,
-				6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */,
 				6E06D0FB27FDA44A00FD4AA1 /* Info.plist */,
 				6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */,
 			);
@@ -79,6 +76,25 @@
 				6E6372F828056012004DA46E /* museosanscyrl_100.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6EF7A3E22806E82E005BFF0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */,
+				6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */,
+				6E6372F728055FC3004DA46E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6EF7A3E42806E8D3005BFF0F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6E06D0EA27FDA44600FD4AA1 /* AppDelegate.swift */,
+				6E06D0EC27FDA44600FD4AA1 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

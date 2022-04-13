@@ -23,10 +23,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XGo-gf-ebP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8UL-NE-Ewr"/>
-                            <constraint firstItem="XGo-gf-ebP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FMX-QY-eOw"/>
-                            <constraint firstItem="XGo-gf-ebP" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.05556" id="KK1-f9-Ald"/>
-                            <constraint firstItem="XGo-gf-ebP" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.0346" id="sCW-uq-VPH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="XGo-gf-ebP" secondAttribute="top" constant="54.5" id="B46-64-JrT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="XGo-gf-ebP" secondAttribute="leading" constant="11.5" id="NeC-3H-yVP"/>
+                            <constraint firstItem="XGo-gf-ebP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="11.5" id="exx-AP-JiV"/>
+                            <constraint firstItem="XGo-gf-ebP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="54.5" id="mef-1M-Vh4"/>
                         </constraints>
                     </view>
                 </viewController>
