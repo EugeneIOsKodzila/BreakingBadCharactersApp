@@ -14,6 +14,7 @@
 		6E06D0F527FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */; };
 		6E06D0F727FDA44A00FD4AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */; };
 		6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */; };
+		6E0ADC8D2808D8D800F28E6D /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */; };
 		6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6372F828056012004DA46E /* museosanscyrl_100.otf */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E06D0F927FDA44A00FD4AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E06D0FB27FDA44A00FD4AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E0ADC8C2808D8D800F28E6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListView.storyboard; sourceTree = "<group>"; };
 		6E6372F828056012004DA46E /* museosanscyrl_100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = museosanscyrl_100.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				6EF7A3E42806E8D3005BFF0F /* Application */,
 				6EF7A3E22806E82E005BFF0F /* Resources */,
 				6E06D0EE27FDA44600FD4AA1 /* ViewController.swift */,
+				6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */,
 				6E06D0F027FDA44600FD4AA1 /* Main.storyboard */,
 				6E06D0FB27FDA44A00FD4AA1 /* Info.plist */,
 				6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */,
@@ -157,6 +160,7 @@
 			files = (
 				6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */,
 				6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */,
+				6E0ADC8D2808D8D800F28E6D /* ListView.storyboard in Resources */,
 				6E06D0F727FDA44A00FD4AA1 /* Assets.xcassets in Resources */,
 				6E06D0F227FDA44600FD4AA1 /* Main.storyboard in Resources */,
 			);
@@ -193,6 +197,14 @@
 				6E06D0F927FDA44A00FD4AA1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E0ADC8C2808D8D800F28E6D /* Base */,
+			);
+			name = ListView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
