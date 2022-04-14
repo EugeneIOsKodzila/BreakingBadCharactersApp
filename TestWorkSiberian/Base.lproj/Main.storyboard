@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fq2-x6-skU">
-                                <rect key="frame" x="-22" y="-18" width="458" height="942"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fq2-x6-skU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-S7-p1B">
@@ -77,13 +77,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fq2-x6-skU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="62" id="20x-4z-BNP"/>
+                            <constraint firstItem="fq2-x6-skU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="20A-Xj-twH"/>
                             <constraint firstItem="sTB-S7-p1B" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9H1-WG-rVM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="fq2-x6-skU" secondAttribute="leading" constant="22" id="CR7-cT-HwG"/>
-                            <constraint firstItem="fq2-x6-skU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="22" id="KSS-Q4-xag"/>
+                            <constraint firstAttribute="bottom" secondItem="fq2-x6-skU" secondAttribute="bottom" id="CvS-hu-j79"/>
                             <constraint firstItem="sTB-S7-p1B" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="MIz-un-K8o"/>
+                            <constraint firstAttribute="trailing" secondItem="fq2-x6-skU" secondAttribute="trailing" id="al3-Wc-OUr"/>
+                            <constraint firstItem="fq2-x6-skU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cxy-Mw-OLP"/>
                             <constraint firstItem="sTB-S7-p1B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dQk-dS-XPG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="fq2-x6-skU" secondAttribute="top" constant="62" id="ei0-0D-me2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sTB-S7-p1B" secondAttribute="trailing" constant="20" id="tKj-1P-86y"/>
                         </constraints>
                     </view>
