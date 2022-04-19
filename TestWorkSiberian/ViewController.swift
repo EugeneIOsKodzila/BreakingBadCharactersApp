@@ -1,8 +1,3 @@
-//
-//  ViewController.swift
-//  TestWorkSiberian
-
-
 import UIKit
 
 class ViewController: UIViewController {
