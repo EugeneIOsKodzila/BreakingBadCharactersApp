@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         didSet {
             enterButton.setTitleColor(.black, for: .normal)
             enterButton.setTitle(Constants.enterTitle, for: .normal)
+            enterButton.isEnabled = false
         }
     }
     @IBOutlet weak var termsLabel: UILabel! {
@@ -48,11 +49,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        print("Привет Женя, все работает")
         setupSwitch()
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = -100
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = 0.0
+        }
     }
   
-    @IBAction func enterButtonPressed(_ sender: Any) {
+    @IBAction func enterButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func acceptTermsSwitch(_ sender: Any) {
+    @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
+        if sender.isOn && !loginTextField.text!.isEmpty && !passwordTextField.text!.isEmpty {
+            enterButton.isEnabled = true
+        }else{
+            enterButton.isEnabled = false
+        }
     }
     
     private func setupSwitch() {
