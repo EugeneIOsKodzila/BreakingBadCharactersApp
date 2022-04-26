@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     enum Constants {
         static let mainTitle = "Мое приложение"
@@ -9,7 +9,7 @@ class ViewController: UIViewController {
         static let passwordPlaceholder = "Введите пароль"
         static let enterTitle = "Войти"
     }
-
+    
     @IBOutlet weak var switcher: UISwitch!
     @IBOutlet weak var backgroundImageView: UIImageView! {
         didSet {
@@ -47,24 +47,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       print("Привет Женя, все работает")
+        print("Привет Женя, все работает")
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
         setupSwitch()
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
-            self.view.frame.origin.y = -100
-        }
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
-            self.view.frame.origin.y = 0.0
-        }
+        setupKeyboardHeight()
     }
-  
+    
     @IBAction func enterButtonPressed(_ sender: UIButton) {
     }
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
-        if sender.isOn && !loginTextField.text!.isEmpty && !passwordTextField.text!.isEmpty {
-            enterButton.isEnabled = true
-        }else{
-            enterButton.isEnabled = false
-        }
+        checkInput()
     }
     
     private func setupSwitch() {
@@ -72,6 +65,28 @@ class ViewController: UIViewController {
         switcher.onTintColor = UIColor.red
         switcher.thumbTintColor = UIColor.black
         switcher.subviews[0].subviews[0].backgroundColor = UIColor.white
+    }
+    
+    private func checkInput() {
+        guard let textLogin = loginTextField.text, let textPassword = passwordTextField.text else {
+            return
+        }
+        enterButton.isEnabled = switcher.isOn && !textLogin.isEmpty && !textPassword.isEmpty
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        checkInput()
+    }
+    
+    // MARK: - Notification Center
+    
+    private func setupKeyboardHeight() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { nc in
+            self.view.frame.origin.y = -100
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { nc in
+            self.view.frame.origin.y = 0.0
+        }
     }
 }
 
