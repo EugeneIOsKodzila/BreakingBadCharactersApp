@@ -9,7 +9,7 @@ class ViewController: UIViewController {
         static let passwordPlaceholder = "Введите пароль"
         static let enterTitle = "Войти"
     }
-
+    
     @IBOutlet weak var switcher: UISwitch!
     @IBOutlet weak var backgroundImageView: UIImageView! {
         didSet {
@@ -24,11 +24,13 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var loginTextField: UITextField! {
         didSet {
+            loginTextField.delegate = self
             loginTextField.placeholder = Constants.loginPlaceholder
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
+            passwordTextField.delegate = self
             passwordTextField.placeholder = Constants.passwordPlaceholder
         }
     }
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
         didSet {
             enterButton.setTitleColor(.black, for: .normal)
             enterButton.setTitle(Constants.enterTitle, for: .normal)
+            enterButton.isEnabled = false
         }
     }
     @IBOutlet weak var termsLabel: UILabel! {
@@ -46,14 +49,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       print("Привет Женя, все работает")
+        print("Привет Женя, все работает")
         setupSwitch()
+        setupKeyboardHeight()
     }
-  
-    @IBAction func enterButtonPressed(_ sender: Any) {
+    
+    @IBAction func enterButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func acceptTermsSwitch(_ sender: Any) {
+    @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
+        checkInput()
     }
+    @IBAction func loginEditText(_ sender: UITextField) {
+        checkInput()
+    }
+    @IBAction func passswordEditText(_ sender: UITextField) {
+        checkInput()
+    }
+    
     
     private func setupSwitch() {
         switcher.isOn = false
@@ -61,5 +73,26 @@ class ViewController: UIViewController {
         switcher.thumbTintColor = UIColor.black
         switcher.subviews[0].subviews[0].backgroundColor = UIColor.white
     }
+    
+    private func checkInput() {
+        guard let textLogin = loginTextField.text, let textPassword = passwordTextField.text else {
+            return
+        }
+        enterButton.isEnabled = switcher.isOn && !textLogin.isEmpty && !textPassword.isEmpty
+    }
+    
+    // MARK: - Notification Center
+    
+    private func setupKeyboardHeight() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { nc in
+            self.view.frame.origin.y = -100
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { nc in
+            self.view.frame.origin.y = 0.0
+        }
+    }
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+}
