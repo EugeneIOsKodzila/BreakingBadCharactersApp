@@ -38,11 +38,17 @@
                                         <rect key="frame" x="0.0" y="70" width="374" height="34"/>
                                         <fontDescription key="fontDescription" name="MuseoSansCyrl-100" family="Museo Sans Cyrl" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <connections>
+                                            <action selector="loginEditText:" destination="BYZ-38-t0r" eventType="editingChanged" id="HNS-D2-xeq"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tGd-S9-jck">
                                         <rect key="frame" x="0.0" y="124" width="374" height="34"/>
                                         <fontDescription key="fontDescription" name="MuseoSansCyrl-100" family="Museo Sans Cyrl" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passswordEditText:" destination="BYZ-38-t0r" eventType="editingChanged" id="kdS-mc-0hz"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-RU-Lre" customClass="CustomButton" customModule="TestWorkSiberian" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="374" height="14"/>

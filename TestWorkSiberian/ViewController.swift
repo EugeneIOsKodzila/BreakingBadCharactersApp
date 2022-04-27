@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     enum Constants {
         static let mainTitle = "Мое приложение"
@@ -24,11 +24,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet weak var loginTextField: UITextField! {
         didSet {
+            loginTextField.delegate = self
             loginTextField.placeholder = Constants.loginPlaceholder
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
+            passwordTextField.delegate = self
             passwordTextField.placeholder = Constants.passwordPlaceholder
         }
     }
@@ -48,8 +50,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Привет Женя, все работает")
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
         setupSwitch()
         setupKeyboardHeight()
     }
@@ -59,6 +59,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
         checkInput()
     }
+    @IBAction func loginEditText(_ sender: UITextField) {
+        checkInput()
+    }
+    @IBAction func passswordEditText(_ sender: UITextField) {
+        checkInput()
+    }
+    
     
     private func setupSwitch() {
         switcher.isOn = false
@@ -74,10 +81,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         enterButton.isEnabled = switcher.isOn && !textLogin.isEmpty && !textPassword.isEmpty
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        checkInput()
-    }
-    
     // MARK: - Notification Center
     
     private func setupKeyboardHeight() {
@@ -90,3 +93,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+}
