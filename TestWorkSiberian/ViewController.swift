@@ -55,14 +55,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        if (loginTextField.text?.isValidEmail)! {
-            print("Email goood")
-        } else {
-            let alert = UIAlertController(title: "Не правильный формат", message: "Попробуй example@mail.ru", preferredStyle: UIAlertController.Style.alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
+        guard let textEmail = loginTextField.text else {
+            return
+        }
+        if !textEmail.isValidEmail {
+            alertEmailNoValid()
         }
     }
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
@@ -74,7 +71,6 @@ class ViewController: UIViewController {
     @IBAction func passswordEditText(_ sender: UITextField) {
         checkInput()
     }
-    
     
     private func setupSwitch() {
         switcher.isOn = false
@@ -90,6 +86,13 @@ class ViewController: UIViewController {
         enterButton.isEnabled = switcher.isOn && !textLogin.isEmpty && !textPassword.isEmpty
     }
     
+    private func alertEmailNoValid() {
+        let alert = UIAlertController(title: "Не правильный формат", message: "Попробуй example@mail.ru", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     // MARK: - Notification Center
     
     private func setupKeyboardHeight() {
@@ -101,18 +104,6 @@ class ViewController: UIViewController {
         }
     }
 }
-
 // MARK: - UITextFieldDelegate
-
 extension ViewController: UITextFieldDelegate {
-    
-}
-
-extension String {
-    
-    var isValidEmail: Bool {
-        let emailRegEx = "[a-zA-Z0-9._]{1,30}+@[a-zA-Z0-9]{1,10}+\\.[a-zA-Z]{1,10}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: self)
-    }
 }

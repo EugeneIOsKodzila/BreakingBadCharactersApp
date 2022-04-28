@@ -16,6 +16,7 @@
 		6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */; };
 		6E0ADC8D2808D8D800F28E6D /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */; };
 		6E2AA6D4280D973B00235A1F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AA6D3280D973B00235A1F /* CustomButton.swift */; };
+		6E606B4F281B27FB006280F8 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E606B4E281B27FB006280F8 /* String + Extension.swift */; };
 		6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6372F828056012004DA46E /* museosanscyrl_100.otf */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		6E06D0FB27FDA44A00FD4AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E0ADC8C2808D8D800F28E6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListView.storyboard; sourceTree = "<group>"; };
 		6E2AA6D3280D973B00235A1F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		6E606B4E281B27FB006280F8 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		6E6372F828056012004DA46E /* museosanscyrl_100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = museosanscyrl_100.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 		6E06D0E927FDA44600FD4AA1 /* TestWorkSiberian */ = {
 			isa = PBXGroup;
 			children = (
+				6E606B4D281B2781006280F8 /* Extensions */,
 				6EF7A3E42806E8D3005BFF0F /* Application */,
 				6EF7A3E22806E82E005BFF0F /* Resources */,
 				6E06D0EE27FDA44600FD4AA1 /* ViewController.swift */,
@@ -74,6 +77,14 @@
 				6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */,
 			);
 			path = TestWorkSiberian;
+			sourceTree = "<group>";
+		};
+		6E606B4D281B2781006280F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E606B4E281B27FB006280F8 /* String + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6E6372F728055FC3004DA46E /* Fonts */ = {
@@ -178,6 +189,7 @@
 			files = (
 				6E06D0EF27FDA44600FD4AA1 /* ViewController.swift in Sources */,
 				6E06D0F527FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld in Sources */,
+				6E606B4F281B27FB006280F8 /* String + Extension.swift in Sources */,
 				6E06D0EB27FDA44600FD4AA1 /* AppDelegate.swift in Sources */,
 				6E06D0ED27FDA44600FD4AA1 /* SceneDelegate.swift in Sources */,
 				6E2AA6D4280D973B00235A1F /* CustomButton.swift in Sources */,
