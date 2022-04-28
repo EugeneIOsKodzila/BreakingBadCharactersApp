@@ -55,6 +55,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
+        if (loginTextField.text?.isValidEmail)! {
+            print("Email goood")
+        } else {
+            let alert = UIAlertController(title: "Не правильный формат", message: "Попробуй example@mail.ru", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
         checkInput()
@@ -93,6 +102,17 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension ViewController: UITextFieldDelegate {
     
+}
+
+extension String {
+    
+    var isValidEmail: Bool {
+        let emailRegEx = "[a-zA-Z0-9._]{1,30}+@[a-zA-Z0-9]{1,10}+\\.[a-zA-Z]{1,10}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
 }
