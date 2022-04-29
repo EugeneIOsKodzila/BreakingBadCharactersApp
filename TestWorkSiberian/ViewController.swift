@@ -55,12 +55,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        guard let textEmail = loginTextField.text else {
+        guard let textEmail = loginTextField.text, !textEmail.isValidEmail else {
             return
         }
-        if !textEmail.isValidEmail {
-            alertEmailNoValid()
-        }
+        alertEmailNoValid()
     }
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
         checkInput()
@@ -88,9 +86,7 @@ class ViewController: UIViewController {
     
     private func alertEmailNoValid() {
         let alert = UIAlertController(title: "Не правильный формат", message: "Попробуй example@mail.ru", preferredStyle: UIAlertController.Style.alert)
-        
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        
         self.present(alert, animated: true, completion: nil)
     }
     // MARK: - Notification Center
