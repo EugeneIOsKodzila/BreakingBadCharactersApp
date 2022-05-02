@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class AuthorizationViewController: UIViewController {
     
     enum Constants {
         static let mainTitle = "Мое приложение"
@@ -55,10 +55,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        guard let textEmail = loginTextField.text, !textEmail.isValidEmail else {
-            return
-        }
+        guard let textEmail = loginTextField.text, !textEmail.isValidEmail else { return }
         alertEmailNoValid()
+        let storyboard = UIStoryboard(name: "ListView", bundle: nil)
+        guard let listViewController = storyboard.instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
+        navigationController?.pushViewController(listViewController, animated: true)
     }
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
         checkInput()
@@ -101,5 +102,5 @@ class ViewController: UIViewController {
     }
 }
 // MARK: - UITextFieldDelegate
-extension ViewController: UITextFieldDelegate {
+extension AuthorizationViewController: UITextFieldDelegate {
 }
