@@ -68,13 +68,11 @@
 		6E06D0E927FDA44600FD4AA1 /* TestWorkSiberian */ = {
 			isa = PBXGroup;
 			children = (
+				6E72941F2822864B00681635 /* Custom Elements */,
+				6E72941C282285CA00681635 /* Flow */,
 				6E606B4D281B2781006280F8 /* Extensions */,
 				6EF7A3E42806E8D3005BFF0F /* Application */,
 				6EF7A3E22806E82E005BFF0F /* Resources */,
-				6E06D0EE27FDA44600FD4AA1 /* AuthorizationViewController.swift */,
-				6EB523832820023E007F9F77 /* ListViewController.swift */,
-				6E2AA6D3280D973B00235A1F /* CustomButton.swift */,
-				6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */,
 				6E06D0F027FDA44600FD4AA1 /* Main.storyboard */,
 				6E06D0FB27FDA44A00FD4AA1 /* Info.plist */,
 				6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */,
@@ -96,6 +94,40 @@
 				6E6372F828056012004DA46E /* museosanscyrl_100.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6E72941C282285CA00681635 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				6E72941E282285F400681635 /* List */,
+				6E72941D282285D400681635 /* Authorization */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		6E72941D282285D400681635 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				6E06D0EE27FDA44600FD4AA1 /* AuthorizationViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		6E72941E282285F400681635 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */,
+				6EB523832820023E007F9F77 /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6E72941F2822864B00681635 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				6E2AA6D3280D973B00235A1F /* CustomButton.swift */,
+			);
+			path = "Custom Elements";
 			sourceTree = "<group>";
 		};
 		6EF7A3E22806E82E005BFF0F /* Resources */ = {
