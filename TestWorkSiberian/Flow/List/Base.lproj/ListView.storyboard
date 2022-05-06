@@ -26,6 +26,9 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="wQt-1t-73j"/>
+                    <connections>
+                        <outlet property="listTableView" destination="pig-UY-hgS" id="NfR-Tz-AmE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzT-sM-4Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
