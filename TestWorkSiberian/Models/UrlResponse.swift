@@ -8,7 +8,7 @@
 import Foundation
 
 struct UrlResponse: Codable {
-    var characterId: Int
+    var char_id: Int
     var name: String
     var birthday: String
     var nickname: String
