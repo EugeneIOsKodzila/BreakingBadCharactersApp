@@ -43,7 +43,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
         let userInfo = urlResponse?[indexPath.row]
-        print(userInfo?.img)
+        if let imageUrl = userInfo?.img {
+            cell.photoImageView.loadFrom(URLAddress: imageUrl)
+        } else {
+            print("image not load")
+        }
         cell.textLabel?.text = userInfo?.nickname
         return cell
     }
@@ -53,11 +57,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 extension UIImageView {
     func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else { return }
-    }
-    DispatchQueue.main.async { [weak self] in
-        if let imageData = try? Data(contentsOf: url) {
-            if let loadedImage = UIImage(data: imageData) {
-                self?.image = loadedImage
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.image = loadedImage
+                }
             }
         }
     }
