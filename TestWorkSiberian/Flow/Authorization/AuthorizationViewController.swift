@@ -53,6 +53,19 @@ class AuthorizationViewController: UIViewController {
         setupSwitch()
         setupKeyboardHeight()
         authDebugInformation()
+        
+        let urlString = "https://www.breakingbadapi.com/api/characters/"
+
+        request(urlString: urlString) { (result) in
+            switch result {
+                
+            case .success(let urlResponse):
+          //      urlResponse.map(<#T##(Success) -> NewSuccess#>)
+                print("success")
+            case .failure(let error):
+                print("error", error)
+            }
+        }
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
@@ -115,6 +128,29 @@ class AuthorizationViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { nc in
             self.view.frame.origin.y = 0.0
         }
+    }
+    
+    func request(urlString: String, completion: @escaping (Result<UrlResponse,Error>)-> Void) {
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("some error")
+                    completion(.failure(error))
+                    
+                    return
+                }
+                guard let data = data else { return }
+                do {
+                    let usersInfo = try JSONDecoder().decode(UrlResponse.self, from: data)
+                    
+                    completion(.success(usersInfo))
+                } catch let jsonError {
+                    print("Failed to decode JSON", jsonError)
+                    completion(.failure(jsonError))
+                }
+            }
+        }.resume()
     }
 }
 // MARK: - UITextFieldDelegate
