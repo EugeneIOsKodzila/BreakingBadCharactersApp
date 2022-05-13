@@ -22,11 +22,11 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RequestBreakingBad()
+        requestBreakingBad()
     }
     
-    func RequestBreakingBad() {
-        networkService.request(urlString: networkService.UrlBreakingBadApi) { [weak self] result in
+    func requestBreakingBad() {
+        networkService.request(urlString: networkService.urlBreakingBadApi) { [weak self] result in
             switch result {
             case .success(let breakingbadCharacters):
                 guard let self = self else { return }
@@ -47,7 +47,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
         let userInfo = breakingBadCharacters[indexPath.row]
-        cell.UserInfoRequest(userInfo: userInfo)
+        cell.userInfoRequest(userInfo: userInfo)
         return cell
     }
 }
