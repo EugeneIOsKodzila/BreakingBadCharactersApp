@@ -1,5 +1,5 @@
 //
-//  UrlResponse.swift
+//  BreakingBadCharacters.swift
 //  TestWorkSiberian
 //
 //  Created by Наташа on 08.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UrlResponse: Codable {
+struct BreakingBadCharacters: Codable {
     var char_id: Int
     var name: String
     var birthday: String
