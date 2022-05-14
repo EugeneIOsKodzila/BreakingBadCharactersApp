@@ -48,6 +48,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
         let userInfo = breakingBadCharacters[indexPath.row]
         cell.userInfoRequest(userInfo: userInfo)
+        cell.layer.borderWidth = CGFloat(1.5)
+        cell.layer.borderColor = tableView.backgroundColor?.cgColor
+        cell.photoImageView.contentMode = .scaleAspectFill
         return cell
     }
 }
