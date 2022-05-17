@@ -22,16 +22,23 @@
                             <constraint firstAttribute="height" constant="60" id="4st-gb-Hkv"/>
                             <constraint firstAttribute="width" constant="60" id="tzq-Gz-2ST"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-A7-Hye" userLabel="Name Label">
-                        <rect key="frame" x="100" y="20" width="363.5" height="163"/>
-                        <string key="text">veeeeeeeeeeeeryyyyyyyyyyyyyyyyyyyyyyyyyyy
-looooooooooonnnnnnnnnnngggggggggggg
-teeeeeeexxxxxttttttttttttt</string>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78d-A7-Hye" userLabel="Name Label">
+                        <rect key="frame" x="100" y="20" width="0.0" height="163"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Tr-4h-fda">
+                        <rect key="frame" x="40" y="91" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="rb4-dQ-cyc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="A7V-Wn-2iG"/>
@@ -43,6 +50,7 @@ teeeeeeexxxxxttttttttttttt</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicatorView" destination="8Tr-4h-fda" id="gFL-KF-WwG"/>
                 <outlet property="nameLabel" destination="78d-A7-Hye" id="Gne-vq-GWd"/>
                 <outlet property="photoImageView" destination="rb4-dQ-cyc" id="Qhs-aV-ZDi"/>
             </connections>

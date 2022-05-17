@@ -100,11 +100,11 @@ class AuthorizationViewController: UIViewController {
     }
     
     private func authDebugInformation() {
-        #if DEBUG
+#if DEBUG
         loginTextField.text = "myapp@swift.com"
         passwordTextField.text = "password12345"
         switcher.isOn = true
-        #endif
+#endif
     }
     // MARK: - Notification Center
     
