@@ -47,7 +47,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
         let userInfo = breakingBadCharacters[indexPath.row]
-        cell.userInfoRequest(userInfo: userInfo)
+        cell.set(userInfo: userInfo)
         return cell
     }
 }
