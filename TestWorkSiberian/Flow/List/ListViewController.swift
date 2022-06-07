@@ -17,14 +17,17 @@ class ListViewController: UIViewController {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
-    
+    @IBOutlet weak var noResultLabel: UILabel! {
+        didSet {
+            noResultLabel.alpha = 0
+        }
+    }
     @IBOutlet weak var listTableView: UITableView! {
         didSet {
             listTableView?.dataSource = self
             listTableView?.delegate = self
             listTableView?.register(ListTableViewCell.nib, forCellReuseIdentifier: ListTableViewCell.identifier)
         }
-        
     }
     
     override func viewDidLoad() {
@@ -67,25 +70,16 @@ class ListViewController: UIViewController {
             print("Error while decoding JSON")
         }
     }
-    
-    func setupNoDataLabel() {
-        let emptyLabel = UILabel()
-        emptyLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
-        emptyLabel.text = "Ooooops no result"
-        emptyLabel.textAlignment = NSTextAlignment.center
-        self.listTableView.backgroundView = emptyLabel
-    }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBarIsEmpty {
+            noResultLabel.alpha = 0
             return breakingBadCharacters.count
         }
-        if tableView.visibleCells.isEmpty {
-            setupNoDataLabel()
-        } else {
-            self.listTableView.backgroundView = nil
+        if filteredCharacters.isEmpty {
+            noResultLabel.alpha = 1
         }
         return filteredCharacters.count
     }
