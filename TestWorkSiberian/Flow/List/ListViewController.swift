@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UISearchControllerDelegate {
     let networkService = NetworkService()
     var breakingBadCharacters: [BreakingBadCharacters] = []
     var filteredCharacters = [BreakingBadCharacters]()
@@ -34,6 +34,16 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         setupSearchBar()
         requestBreakingBad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.isActive = true
+        searchController.delegate = self
+    }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {self.searchController.searchBar.becomeFirstResponder()})
     }
     
     func requestBreakingBad() {
@@ -80,6 +90,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         if filteredCharacters.isEmpty {
             noResultLabel.alpha = 1
+        } else {
+            noResultLabel.alpha = 0
         }
         return filteredCharacters.count
     }
