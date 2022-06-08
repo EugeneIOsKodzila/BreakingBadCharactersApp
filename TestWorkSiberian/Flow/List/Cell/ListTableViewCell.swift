@@ -17,8 +17,10 @@ class ListTableViewCell: UITableViewCell {
         if let imageUrl = userInfo.img {
             photoImageView.kf.indicatorType = .activity
             photoImageView.kf.setImage(with: URL(string:imageUrl), placeholder: nil, options: [.transition(.fade(0.7))], completionHandler: nil)
+        } else {
+            photoImageView.image = UIImage(named: "background")
         }
-        nameLabel.text = userInfo.nickname
+        nameLabel.text = userInfo.name
         setupCell()
     }
     
