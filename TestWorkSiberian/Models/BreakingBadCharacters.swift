@@ -12,7 +12,9 @@ struct BreakingBadCharacters: Codable {
     var name: String
     var birthday: String
     var nickname: String
-    var img: String?
+    var img: String
     var status: String
     var category: String
+    var occupation: [String]
+    var portrayed: String
 }

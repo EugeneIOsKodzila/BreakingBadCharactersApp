@@ -107,6 +107,16 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.set(userInfo: userInfo)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+        }
+    }
 }
 
 extension ListViewController: UISearchBarDelegate {
