@@ -114,7 +114,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
-            destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+            if searchBarIsEmpty {
+                destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+            } else {
+                destination.character = filteredCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+            }
         }
     }
 }
