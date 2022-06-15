@@ -80,6 +80,13 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
             print("Error while decoding JSON")
         }
     }
+    
+    private func selectedCharacter(char_id: Int) {
+        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
+        guard let chooseCharacter = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
+        chooseCharacter.char_id = char_id
+        navigationController?.pushViewController(chooseCharacter, animated: true)
+    }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -109,20 +116,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
-        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
-        navigationController?.pushViewController(detailViewController, animated: true)
+        if searchBarIsEmpty {
+            selectedCharacter(char_id: breakingBadCharacters[indexPath.row].char_id)
+        } else {
+            selectedCharacter(char_id: filteredCharacters[indexPath.row].char_id)
+        }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? DetailViewController {
-//            if searchBarIsEmpty {
-//                destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
-//            } else {
-//                destination.character = filteredCharacters[(listTableView.indexPathForSelectedRow?.row)!]
-//            }
-//        }
-//    }
 }
 
 extension ListViewController: UISearchBarDelegate {
