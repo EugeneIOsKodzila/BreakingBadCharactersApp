@@ -109,18 +109,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetails", sender: self)
+        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailViewController {
-            if searchBarIsEmpty {
-                destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
-            } else {
-                destination.character = filteredCharacters[(listTableView.indexPathForSelectedRow?.row)!]
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? DetailViewController {
+//            if searchBarIsEmpty {
+//                destination.character = breakingBadCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+//            } else {
+//                destination.character = filteredCharacters[(listTableView.indexPathForSelectedRow?.row)!]
+//            }
+//        }
+//    }
 }
 
 extension ListViewController: UISearchBarDelegate {

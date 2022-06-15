@@ -8,7 +8,6 @@ import Foundation
 import UIKit
 import Kingfisher
 
-
 class DetailViewController: UIViewController {
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,12 +19,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "\(character.img)")
+        //let url = URL(string: "\(character.img)")
         nameLabel.text = character?.name
         birthdayLabel.text = character?.birthday
         occupationLabel.text = character?.occupation[0]
         portrayedLabel.text = character?.portrayed
-        characterImage.kf.setImage(with: url)
+        //characterImage.kf.setImage(with: url)
         
     }
 }

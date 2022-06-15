@@ -25,6 +25,7 @@
 		6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6372F828056012004DA46E /* museosanscyrl_100.otf */; };
 		6E85F7F6282722B9008D362B /* BreakingBadCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85F7F5282722B9008D362B /* BreakingBadCharacters.swift */; };
 		6EAF7709282BCD8D002BFC24 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAF7708282BCD8D002BFC24 /* NetworkService.swift */; };
+		6EB062E4285920A900AF1A2F /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB062E3285920A900AF1A2F /* DetailView.storyboard */; };
 		6EB523842820023E007F9F77 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB523832820023E007F9F77 /* ListViewController.swift */; };
 		6EE207AB2824E601008112B2 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE207AA2824E601008112B2 /* UITableViewCell+Extension.swift */; };
 		EAB1B99F2D9F7358990BC664 /* Pods_TestWorkSiberian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7D47B66C0B4E8A6368B626 /* Pods_TestWorkSiberian.framework */; };
@@ -52,6 +53,7 @@
 		6E6372F828056012004DA46E /* museosanscyrl_100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = museosanscyrl_100.otf; sourceTree = "<group>"; };
 		6E85F7F5282722B9008D362B /* BreakingBadCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCharacters.swift; sourceTree = "<group>"; };
 		6EAF7708282BCD8D002BFC24 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6EB062E3285920A900AF1A2F /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		6EB523832820023E007F9F77 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6EE207AA2824E601008112B2 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Extension.swift"; path = "TestWorkSiberian/Extensions/UITableViewCell+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		EE9FAA96A04CFC61C90D58F8 /* Pods-TestWorkSiberian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWorkSiberian.debug.xcconfig"; path = "Target Support Files/Pods-TestWorkSiberian/Pods-TestWorkSiberian.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,10 +170,10 @@
 		6E72941E282285F400681635 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				6EB062E52859235C00AF1A2F /* Detail */,
 				6E88165B2823D677004110C2 /* Cell */,
 				6E0ADC8B2808D8D800F28E6D /* ListView.storyboard */,
 				6EB523832820023E007F9F77 /* ListViewController.swift */,
-				6E493D7628531D37003565E8 /* DetailViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -207,6 +209,15 @@
 				6E85F7F5282722B9008D362B /* BreakingBadCharacters.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6EB062E52859235C00AF1A2F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6E493D7628531D37003565E8 /* DetailViewController.swift */,
+				6EB062E3285920A900AF1A2F /* DetailView.storyboard */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		6EF7A3E22806E82E005BFF0F /* Resources */ = {
@@ -291,6 +302,7 @@
 			files = (
 				6E6372F928056012004DA46E /* museosanscyrl_100.otf in Resources */,
 				6E4F8E592823B0B000874C06 /* ListTableViewCell.xib in Resources */,
+				6EB062E4285920A900AF1A2F /* DetailView.storyboard in Resources */,
 				6E06D0FA27FDA44A00FD4AA1 /* LaunchScreen.storyboard in Resources */,
 				6E08E2AC2840C8F100B5DDA6 /* localDataBB.json in Resources */,
 				6E0ADC8D2808D8D800F28E6D /* ListView.storyboard in Resources */,
