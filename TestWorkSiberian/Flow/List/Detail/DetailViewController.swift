@@ -16,7 +16,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var occupationLabel: UILabel!
     @IBOutlet weak var portrayedLabel: UILabel!
     var char_id: Int!
-    var character:BreakingBadCharacters!
     var networkService = NetworkService()
     
     override func viewDidLoad() {
