@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
     @IBOutlet weak var portrayedLabel: UILabel!
-    var char_id: Int!
+    var charId: Int?
     var networkService = NetworkService()
     
     override func viewDidLoad() {
@@ -24,21 +24,25 @@ class DetailViewController: UIViewController {
     }
     
     func requestData() {
-        guard let id = char_id else {return}
+        guard let id = charId else {return}
         networkService.request(urlString: networkService.urlBreakingBadApi + String(id)) { [weak self] result in
             switch result {
             case .success(let breakingbadCharacters):
                 guard let self = self else { return }
                 guard let actor = breakingbadCharacters.first else {return}
-                self.nameLabel.text = actor.name
-                self.birthdayLabel.text = actor.birthday
-                let url = URL(string: "\(actor.img)")
-                self.characterImage.kf.setImage(with: url)
-                self.occupationLabel.text = actor.occupation[0]
-                self.portrayedLabel.text = actor.portrayed
+                self.setupActorData(actorData: actor)
             case .failure(let error):
                 print("error", error)
             }
         }
+    }
+    
+    private func setupActorData(actorData: BreakingBadCharacters) {
+        nameLabel.text = actorData.name
+        birthdayLabel.text = actorData.birthday
+        let url = URL(string: "\(actorData.img)")
+        characterImage.kf.setImage(with: url)
+        occupationLabel.text = actorData.occupation[0]
+        portrayedLabel.text = actorData.portrayed
     }
 }

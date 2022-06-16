@@ -84,7 +84,7 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
     private func selectedCharacter(char_id: Int) {
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
         guard let chooseCharacter = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
-        chooseCharacter.char_id = char_id
+        chooseCharacter.charId = char_id
         navigationController?.pushViewController(chooseCharacter, animated: true)
     }
 }
