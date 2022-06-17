@@ -80,6 +80,13 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
             print("Error while decoding JSON")
         }
     }
+    
+    private func selectedCharacter(char_id: Int) {
+        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
+        guard let chooseCharacter = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {return}
+        chooseCharacter.charId = char_id
+        navigationController?.pushViewController(chooseCharacter, animated: true)
+    }
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -106,6 +113,14 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let userInfo = filteredCharacters[indexPath.row]
         cell.set(userInfo: userInfo)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchBarIsEmpty {
+            selectedCharacter(char_id: breakingBadCharacters[indexPath.row].char_id)
+        } else {
+            selectedCharacter(char_id: filteredCharacters[indexPath.row].char_id)
+        }
     }
 }
 

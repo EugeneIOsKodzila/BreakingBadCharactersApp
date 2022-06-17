@@ -8,6 +8,7 @@
 import Foundation
 
 class NetworkService {
+    static var shared = NetworkService()
     let urlBreakingBadApi = "https://www.breakingbadapi.com/api/characters/"
     func request(urlString: String, completion: @escaping (Result<[BreakingBadCharacters],Error>)-> Void) {
         guard let url = URL(string: urlString) else { return }
