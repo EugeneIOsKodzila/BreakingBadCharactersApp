@@ -8,25 +8,36 @@
 import Foundation
 
 final class UserContext {
+    private static var userDefaults: UserDefaults {
+        get {
+            return .standard
+        }
+    }
+    
     static var login: String? {
         set {
-            UserDefaults.standard.set(newValue, forKey: "login")
-        }get{
-            return UserDefaults.standard.string(forKey: "login")
+            userDefaults.set(newValue, forKey: "login")
+        }
+        get {
+            return userDefaults.string(forKey: "login")
         }
     }
+    
     static var password: String? {
         set {
-            UserDefaults.standard.set(newValue, forKey: "password")
-        }get{
-            return UserDefaults.standard.string(forKey: "password")
+            userDefaults.set(newValue, forKey: "password")
+        }
+        get {
+            return userDefaults.string(forKey: "password")
         }
     }
+    
     static var isAuth: Bool? {
         set {
-            UserDefaults.standard.set(newValue, forKey: "isAuth")
-        }get{
-            return UserDefaults.standard.bool(forKey: "isAuth")
+            userDefaults.set(newValue, forKey: "isAuth")
+        }
+        get {
+            return userDefaults.bool(forKey: "isAuth")
         }
     }
 }

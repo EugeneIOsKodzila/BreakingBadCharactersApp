@@ -15,23 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if UserContext.isAuth! == true {
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "ListView", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ListViewController")
-            
-            window.rootViewController = initialViewController
-            window.makeKeyAndVisible()
-        } else {
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "AuthView", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "AuthorizationViewController")
-            
-            window.rootViewController = initialViewController
-            window.makeKeyAndVisible()
-        }
         return true
     }
     
