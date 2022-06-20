@@ -59,6 +59,7 @@ class AuthorizationViewController: UIViewController {
         guard let textEmail = loginTextField.text, !textEmail.isValidEmail else { return }
         alertEmailNoValid()
         transitionListView()
+        UserContext.isAuth = true
     }
     
     @IBAction func acceptTermsSwitch(_ sender: UISwitch) {
