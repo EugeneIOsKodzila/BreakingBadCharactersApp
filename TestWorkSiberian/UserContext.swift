@@ -43,20 +43,7 @@ final class UserContext {
             }
         }
     }
-    
-    var token: String? {
-        get {
-            return queue.sync {
-                return keychainService.token
-            }
-        }
-        set(newToken) {
-            queue.async(flags: .barrier) {
-                self.keychainService.token = newToken
-            }
-        }
-    }
-    
+        
     static var isAuth: Bool? {
         set {
             userDefaults.set(newValue, forKey: "isAuth")

@@ -15,7 +15,6 @@ final class KeychainService {
         case keyChainName
         case password
         case login
-        case token
     }
     
     var login: String? {
@@ -33,15 +32,6 @@ final class KeychainService {
         }
         set(newPassword) {
             currentKeyChain[SettingsKeyChain.password.rawValue] = newPassword
-        }
-    }
-    
-    var token:String? {
-        get {
-            return currentKeyChain[SettingsKeyChain.token.rawValue]
-        }
-        set(newToken) {
-            currentKeyChain[SettingsKeyChain.token.rawValue] = newToken
         }
     }
 }
