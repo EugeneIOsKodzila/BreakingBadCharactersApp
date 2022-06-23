@@ -8,27 +8,52 @@
 import Foundation
 
 final class UserContext {
+    private (set) lazy var userContext = UserContext()
+    private lazy var keychainService = KeychainService()
+    private lazy var queue = DispatchQueue(label: "com.eugeneKodzila.TestWorkSiberian", qos: DispatchQoS.userInitiated, attributes: .concurrent)
+    
     private static var userDefaults: UserDefaults {
         get {
             return .standard
         }
     }
     
-    static var login: String? {
-        set {
-            userDefaults.set(newValue, forKey: "login")
-        }
+    var login: String? {
         get {
-            return userDefaults.string(forKey: "login")
+            return queue.sync {
+                return UserContext.userDefaults.string(forKey: "login")
+            }
+        }
+        set {
+            queue.async(flags: .barrier) {
+                UserContext.userDefaults.setValue(newValue, forKey: "login")
+            }
         }
     }
     
-    static var password: String? {
-        set {
-            userDefaults.set(newValue, forKey: "password")
-        }
+    var password: String? {
         get {
-            return userDefaults.string(forKey: "password")
+            return queue.sync {
+                return UserContext.userDefaults.string(forKey: "password")
+            }
+        }
+        set {
+            queue.async(flags: .barrier) {
+                UserContext.userDefaults.setValue(newValue, forKey: "password")
+            }
+        }
+    }
+    
+    var token: String? {
+        get {
+            return queue.sync {
+                return keychainService.token
+            }
+        }
+        set(newToken) {
+            queue.async(flags: .barrier) {
+                self.keychainService.token = newToken
+            }
         }
     }
     

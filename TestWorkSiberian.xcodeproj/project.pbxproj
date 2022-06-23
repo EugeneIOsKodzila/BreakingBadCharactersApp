@@ -28,6 +28,8 @@
 		6EAF7709282BCD8D002BFC24 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAF7708282BCD8D002BFC24 /* NetworkService.swift */; };
 		6EB062E4285920A900AF1A2F /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB062E3285920A900AF1A2F /* DetailView.storyboard */; };
 		6EB523842820023E007F9F77 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB523832820023E007F9F77 /* ListViewController.swift */; };
+		6EDFCB7F2862EFFE00870DC6 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDFCB7E2862EFFE00870DC6 /* Keychain.swift */; };
+		6EDFCB812862F09000870DC6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDFCB802862F09000870DC6 /* KeychainService.swift */; };
 		6EE207AB2824E601008112B2 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE207AA2824E601008112B2 /* UITableViewCell+Extension.swift */; };
 		EAB1B99F2D9F7358990BC664 /* Pods_TestWorkSiberian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7D47B66C0B4E8A6368B626 /* Pods_TestWorkSiberian.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		6EAF7708282BCD8D002BFC24 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6EB062E3285920A900AF1A2F /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		6EB523832820023E007F9F77 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6EDFCB7E2862EFFE00870DC6 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		6EDFCB802862F09000870DC6 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		6EE207AA2824E601008112B2 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Extension.swift"; path = "TestWorkSiberian/Extensions/UITableViewCell+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		EE9FAA96A04CFC61C90D58F8 /* Pods-TestWorkSiberian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWorkSiberian.debug.xcconfig"; path = "Target Support Files/Pods-TestWorkSiberian/Pods-TestWorkSiberian.debug.xcconfig"; sourceTree = "<group>"; };
 		F7FC7D970FF7B697BA257F43 /* Pods-TestWorkSiberian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWorkSiberian.release.xcconfig"; path = "Target Support Files/Pods-TestWorkSiberian/Pods-TestWorkSiberian.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				6E06D0FB27FDA44A00FD4AA1 /* Info.plist */,
 				6E06D0F327FDA44600FD4AA1 /* TestWorkSiberian.xcdatamodeld */,
 				6E974F68285DE196005C06A8 /* UserContext.swift */,
+				6EDFCB802862F09000870DC6 /* KeychainService.swift */,
 			);
 			path = TestWorkSiberian;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 		6EF7A3E22806E82E005BFF0F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EDFCB7E2862EFFE00870DC6 /* Keychain.swift */,
 				6E08E2AA2840C8DA00B5DDA6 /* dataJSON */,
 				6E06D0F827FDA44A00FD4AA1 /* LaunchScreen.storyboard */,
 				6E06D0F627FDA44A00FD4AA1 /* Assets.xcassets */,
@@ -376,7 +382,9 @@
 				6E06D0ED27FDA44600FD4AA1 /* SceneDelegate.swift in Sources */,
 				6E2AA6D4280D973B00235A1F /* CustomButton.swift in Sources */,
 				6E85F7F6282722B9008D362B /* BreakingBadCharacters.swift in Sources */,
+				6EDFCB812862F09000870DC6 /* KeychainService.swift in Sources */,
 				6EB523842820023E007F9F77 /* ListViewController.swift in Sources */,
+				6EDFCB7F2862EFFE00870DC6 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
