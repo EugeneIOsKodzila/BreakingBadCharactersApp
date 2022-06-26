@@ -56,8 +56,8 @@ class AuthorizationViewController: UIViewController {
     }
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        guard let textEmail = loginTextField.text, textEmail.isValidEmail else { return }
-        alertEmailNoValid()
+        guard let textEmail = loginTextField.text, textEmail.isValidEmail else { alertEmailNoValid()
+            return }
         transitionListView()
         UserContext.isAuth = true
     }
