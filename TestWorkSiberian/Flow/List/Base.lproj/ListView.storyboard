@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B4y-QN-9Wr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T6o-20-aL5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Characters-->
+        <!--List View Controller-->
         <scene sceneID="EYE-TE-nQ7">
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="B4y-QN-9Wr" customClass="ListViewController" customModule="TestWorkSiberian" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,13 +32,38 @@
                         <viewLayoutGuide key="safeArea" id="eT4-8d-395"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Characters" id="wQt-1t-73j"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="wQt-1t-73j">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" id="gL0-mb-T9Z">
+                            <connections>
+                                <action selector="exitButtonPressed:" destination="B4y-QN-9Wr" id="UZA-4A-YvX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="exitButton" destination="gL0-mb-T9Z" id="Izh-01-TnU"/>
                         <outlet property="listTableView" destination="pig-UY-hgS" id="NfR-Tz-AmE"/>
                         <outlet property="noResultLabel" destination="kHY-2o-Wm9" id="VRp-65-rp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzT-sM-4Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636.231884057971" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8GI-bu-7O4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T6o-20-aL5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="54e-hX-XWB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="B4y-QN-9Wr" kind="relationship" relationship="rootViewController" id="AML-Q9-Xoe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cd3-UI-SxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726.0869565217392" y="65.625"/>
         </scene>

@@ -22,6 +22,8 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
             noResultLabel.alpha = 0
         }
     }
+    @IBOutlet weak var exitButton: UIBarButtonItem!
+    
     @IBOutlet weak var listTableView: UITableView! {
         didSet {
             listTableView?.dataSource = self
@@ -34,6 +36,14 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
         super.viewDidLoad()
         setupSearchBar()
         requestBreakingBad()
+    }
+    
+    @IBAction func exitButtonPressed(_ sender: Any) {
+        UserContext.isAuth = false
+        let storyboard = UIStoryboard(name: "AuthView", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "AuthorizationViewController") as? AuthorizationViewController else {return}
+        navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
