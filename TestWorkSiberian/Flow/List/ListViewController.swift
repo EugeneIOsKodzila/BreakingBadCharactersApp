@@ -23,7 +23,6 @@ class ListViewController: UIViewController, UISearchControllerDelegate {
         }
     }
     @IBOutlet weak var exitButton: UIBarButtonItem!
-    
     @IBOutlet weak var listTableView: UITableView! {
         didSet {
             listTableView?.dataSource = self
